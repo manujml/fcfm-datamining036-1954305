@@ -9,9 +9,6 @@ df = df[~df['Profundidad'].str.contains('en revision', na=False)]
 # Convertir a datos numéricos por si las dudas xd
 df['Profundidad'] = pd.to_numeric(df['Profundidad'], errors='coerce')
 
-# Matriz de correlación
-correlation_matrix = df[['Magnitud', 'Profundidad']].corr()
-
 plt.figure(figsize=(24, 20))
 
 # dispersión
