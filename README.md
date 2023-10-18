@@ -31,6 +31,7 @@ De acuerdo a los objetivos del SSN, se busca:
 + Data clustering
 + Text analysis
 
+
 ### | Práctica 1 | Descarga del csv
 Solo fue una descarga directa del csv desde el repositorio.
 
