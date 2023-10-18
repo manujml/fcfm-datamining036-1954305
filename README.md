@@ -32,7 +32,7 @@ De acuerdo a los objetivos del SSN, se busca:
 + Text analysis
 
 
-### | Práctica 1 | Descarga del csv
+### | Práctica 1 | Data Acquisition
 Solo fue una descarga directa del csv desde el repositorio.
 
 ![Screenshot downloading csv](https://github.com/manujml/fcfm-datamining036-1954305/blob/main/priv/p1.PNG)
