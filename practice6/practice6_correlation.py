@@ -11,14 +11,15 @@ df['Profundidad'] = pd.to_numeric(df['Profundidad'], errors='coerce')
 
 plt.figure(figsize=(24, 20))
 
-# dispersión
+# scatter plus linear regression
 plt.scatter(df['Magnitud'], df['Profundidad'], alpha=0.5)
+sns.regplot(x='Magnitud', y='Profundidad', data=df, scatter=False, color='red', line_kws={"color":"red"})
 
 plt.xlabel('Magnitud')
 plt.ylabel('Profundidad')
 
-plt.title('Dispersión de Magnitud | Profundidad')
+plt.title('Regresión lineal de Magnitud | Profundidad')
 
-plt.savefig('correlation.png')
+plt.savefig('regression.png')
 
 plt.show()
