@@ -19,7 +19,41 @@ De acuerdo a los objetivos del SSN, se busca:
 + Distribuir la información de manera oportuna y eficiente de la localización y magnitud de un sismo. También, cuando sea el caso y la cobertura de la red lo permita, proporcionar a las instancias correspondientes los parámetros necesarios para emitir alertas tempranas o iniciar protocolos de protección civil.
 + Archivar y distribuir de manera eficiente a la comunidad científica mundial, toda la información y datos generados. Establecer y mantener un programa de difusión y divulgación de la sismología.
 
-### | Práctica 1 | Descarga del csv
+## Temas/Practicas de DataMining
++ Data Acquisition
++ Data Cleaning
++ Descriptive Statistics
++ Data Visualization
++ Statistic Test
++ Linear Models + correlation
++ Data classification
++ Forecasting
++ Data clustering
++ Text analysis
+
+
+### | Práctica 1 | Data Acquisition
 Solo fue una descarga directa del csv desde el repositorio.
 
 ![Screenshot downloading csv](https://github.com/manujml/fcfm-datamining036-1954305/blob/main/priv/p1.PNG)
+
+### | Práctica 2 | Data Cleaning
+
+### | Práctica 3 | Descriptive Statistics
+
+### | Práctica 4 | Data Visualization
+
+### | Práctica 5 | Statistic Test
+
+### | Práctica 6 | Linear Models + correlation
+
+### | Práctica 7 | Data classification¿
+
+### | Práctica 8 | Forecasting
+pendiente
+
+### | Práctica 9 | Data clustering
+pendiente
+
+### | Práctica 10 | Text analysis
+pendiente
