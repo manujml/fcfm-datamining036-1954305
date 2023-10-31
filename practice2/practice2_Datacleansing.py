@@ -12,9 +12,14 @@ df['Referencia de localizacion'] = df['Referencia de localizacion'].str.split('d
 new_name = 'Localizacion'
 df = df.rename(columns={'Referencia de localizacion': new_name})
 
+# Había datos que tenían la cadena 'en revision', por lo que se tuvieron que omitir | recordar limpiar y actualizar csv
+df = df[~df['Profundidad'].str.contains('en revision', na=False)]
+# Convertir a datos numéricos por si las dudas xd
+df['Profundidad'] = pd.to_numeric(df['Profundidad'], errors='coerce')
+
 # Elimina las filas que incluyan 'no calculable' en la columna 'Magnitud', puesto que no se puede trabajar con dichos datos
 dlte_rows = df[df['Magnitud'] == 'no calculable'].index
 df.drop(dlte_rows, inplace=True)
 
 # Guarda el nuevo csv con los datos limpios
-df.to_csv('SISMOS_MEX_Practice2.csv', index=False)
+df.to_csv('SISMOS_MEX.csv', index=False)
