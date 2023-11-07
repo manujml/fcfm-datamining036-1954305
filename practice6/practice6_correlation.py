@@ -1,25 +1,41 @@
 import pandas as pd
+from sklearn.linear_model import LinearRegression
 import matplotlib.pyplot as plt
-import seaborn as sns
 
-df = pd.read_csv('C:/Users/Admin/Documents/Documentos Manuel/0. UANL/FCFM/7mo SEMESTRE/Minería de Datos/practice2/SISMOS_MEX.csv')
+df = pd.read_csv('C:/Users/Admin/Documents/Documentos Manuel/0. UANL/FCFM/7mo SEMESTRE/Minería de Datos/csv/SISMOS_MEX_v2.csv')
 
-# Había datos que tenían la cadena 'en revision', por lo que se tuvieron que omitir | recordar limpiar y actualizar csv
-df = df[~df['Profundidad'].str.contains('en revision', na=False)]
-# Convertir a datos numéricos por si las dudas xd
-df['Profundidad'] = pd.to_numeric(df['Profundidad'], errors='coerce')
+# convertir columna 'Fecha' a tipo datetime por si las dudas xd
+df['Fecha'] = pd.to_datetime(df['Fecha'])
 
-plt.figure(figsize=(24, 20))
+# solo datos del 2023
+df_2023 = df[df['Fecha'].dt.year == 2023]
 
-# scatter plus linear regression
-plt.scatter(df['Magnitud'], df['Profundidad'], alpha=0.5)
-sns.regplot(x='Magnitud', y='Profundidad', data=df, scatter=False, color='red', line_kws={"color":"red"})
+# X fechas del año 2023
+X = df_2023['Fecha'].dt.month.values.reshape(-1, 1)
 
-plt.xlabel('Magnitud')
-plt.ylabel('Profundidad')
+# Y magnitudes
+Y = df_2023['Magnitud']
 
-plt.title('Regresión lineal de Magnitud | Profundidad')
+# modelo de regresión lineal
+regression = LinearRegression()
+regression.fit(X, Y)
 
-plt.savefig('regression.png')
+# coef regresión
+m = regression.coef_[0]
+b = regression.intercept_
 
+# Crear la línea de regresión
+regression_line = m * X + b
+
+# Graficar los resultados
+plt.figure(figsize=(14, 10))
+plt.scatter(df_2023['Fecha'], Y, label='Magnitudes 2023')
+plt.plot(df_2023['Fecha'], regression_line, color='red', label='Regresión Lineal')
+plt.title('Regresión Lineal sobre las Magnitudes de Sismos 2023')
+plt.xlabel('Fechas')
+plt.ylabel('Magnitud')
+plt.legend()
+plt.xticks(rotation=90)
+plt.tight_layout()
+plt.savefig('regresionlineal_2023.png')
 plt.show()
