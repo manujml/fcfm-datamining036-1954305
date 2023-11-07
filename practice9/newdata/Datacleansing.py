@@ -1,8 +1,7 @@
 import pandas as pd
-import os
 
 # Leyendo el archivo csv
-df = pd.read_csv('C:/Users/Admin/Documents/Documentos Manuel/0. UANL/FCFM/7mo SEMESTRE/Minería de Datos/practice9/newdata/SSNMX_catalogo_20231105_20231105.csv')
+df = pd.read_csv('C:/Users/Admin/Documents/Documentos Manuel/0. UANL/FCFM/7mo SEMESTRE/Minería de Datos/practice9/newdata/SSNMX_catalogo_20230831_20231101.csv')
                     # ↑ cambiar la dirección en donde se encuentra el archivo localmente en el dispositivo
 
 # Borrar todas las cadenas antes de la cadena 'de ', incluyendo a dicha cadena
@@ -31,4 +30,4 @@ del(df['Hora UTC'])
 del(df['Estatus'])
 
 # Guarda el nuevo csv con los datos limpios
-df.to_csv('SISMOS_5_NOV_2023.csv', index=False)
+df.to_csv('SISMOS_1_NOV_2023.csv', index=False)
