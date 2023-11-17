@@ -15,5 +15,5 @@ wordcloud = WordCloud(width=800, height=400, background_color='white').generate(
 plt.figure(figsize=(14, 12))
 plt.imshow(wordcloud, interpolation='bilinear')
 plt.axis('off')
-plt.show()
 plt.savefig("WordCloud_Sismos2023.png")
+plt.show()
