@@ -34,9 +34,6 @@ plt.figure(figsize=(10, 6))
 # sismos
 plt.scatter(df['Longitud'], df['Latitud'], color='blue', label='Sismos')
 
-# cinco sismos más fuertes
-plt.scatter(top_5_sismos['Longitud'], top_5_sismos['Latitud'], color='red', label='Top 5 Sismos')
-
 # puntos críticos
 plt.scatter(puntos_criticos['Longitud'], puntos_criticos['Latitud'], color='orange', label='Puntos Críticos')
 
