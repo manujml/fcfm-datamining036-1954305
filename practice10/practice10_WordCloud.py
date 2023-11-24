@@ -8,10 +8,10 @@ df = pd.read_csv('C:/Users/Admin/Documents/Documentos Manuel/0. UANL/FCFM/7mo SE
 # concatenar las localizaciones
 text = ' '.join(df['Localizacion'].dropna().astype(str).values)
 
-# crear wordcloud
+# wordcloud
 wordcloud = WordCloud(width=800, height=400, background_color='white').generate(text)
 
-# Imagen del Word Cloud
+# Imagen Word Cloud
 plt.figure(figsize=(14, 12))
 plt.imshow(wordcloud, interpolation='bilinear')
 plt.axis('off')
